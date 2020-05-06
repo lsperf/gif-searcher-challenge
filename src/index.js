@@ -1,7 +1,6 @@
 import ReactDOM from "react-dom";
 import React from "react";
-import "./styles.css";
-
+import {searchGif} from 'gifs'
 const Instructions = () => (
   <>
     <h2>Gif search excercise</h2>
@@ -19,6 +18,12 @@ const Instructions = () => (
     </ul>
   </>
 );
+handleSearch = () => {
+  searchGif(inputVal).
+  then(data){
+    setState(gifsArr: data);
+  }
+}
 
 const App = () => {
   return (
@@ -26,9 +31,16 @@ const App = () => {
       <Instructions />
       <div className="filters">
         <div className="form-group">
-          <input type="text" placeholder="Search Gif" />
-          <button>Search</button>
+          <input type="text" ref= placeholder="Search Gif" />
+          <button onClick={handleSearch}>Search</button>
+          
         </div>
+        
+      </div>
+      <div>
+        {gifsArr.map(
+          
+        )}
       </div>
     </>
   );
